@@ -109,7 +109,7 @@ suite('Functional Tests', function() {
       
       test('Test GET /api/books/[id] with valid id in db',  function(done){
         chai.request(server)
-      .get('/api/books/66bb4373be0eb1764e99fe0d')
+      .get('/api/books/66bb59686af8351dd277a22b')
       .end(function(err, res){
         //console.log(res.body); 
         assert.equal(res.status, 200);
@@ -129,7 +129,7 @@ suite('Functional Tests', function() {
       
       test('Test POST /api/books/[id] with comment', function(done){
       chai.request(server)
-      .post('/api/books/66bb4373be0eb1764e99fe0d')
+      .post('/api/books/66bb59686af8351dd277a22b')
       .send({
         comment : 'Test Comment'
       })
@@ -148,7 +148,7 @@ suite('Functional Tests', function() {
 
       test('Test POST /api/books/[id] without comment field', function(done){
         chai.request(server)
-      .post('/api/books/66bb4373be0eb1764e99fe0d')
+      .post('/api/books/66bb59686af8351dd277a22b')
       .end(function(err, res){
         assert.equal(res.status, 200);
         assert.isString(res.body); 
@@ -181,7 +181,7 @@ suite('Functional Tests', function() {
 
       test('Test DELETE /api/books/[id] with valid id in db', function(done){
         chai.request(server)
-        .delete('/api/books/66bb48ff52a70463f9dfa08d')
+        .delete('/api/books/66bb59a96af8351dd277a236')
         .end(function(err, res){
           console.log(res.body);
           assert.equal(res.status, 200);
